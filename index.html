@@ -1,0 +1,19 @@
+<form>
+  <input type="button" onclick="incrementValue(-1)" value="-1" />
+  <input type="text" id="number" value="0" size=1 />%
+  <input type="button" onclick="incrementValue(1)" value="+1" />
+</form>
+<script>
+  function incrementValue(amount) {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value += amount;
+    document.getElementById('number').value = value;
+  }
+</script>
+<style>
+  input {
+    background-color: transparent;
+    border-color: transparent;
+  }
+</style>
