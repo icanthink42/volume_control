@@ -1,13 +1,25 @@
 <form>
+  <input type="button" onclick="play_audio()" value="Play" /></br>
   <input type="button" onclick="incrementValue(-1)" value="-1" />
   <input type="text" id="number" value="0" size=1 />%
   <input type="button" onclick="incrementValue(1)" value="+1" />
 </form>
 <script>
+  var audio = new Audio('audio_file.mp3');
+  function play_audio() {
+    audio.play();
+  }
   function incrementValue(amount) {
     var value = parseInt(document.getElementById('number').value, 10);
     value = isNaN(value) ? 0 : value;
     value += amount;
+    if (value < 0) {
+      value = 100
+    }
+    if (value > 100) {
+      value = 0
+    }
+    audio.volume = value / 100;
     document.getElementById('number').value = value;
   }
 </script>
