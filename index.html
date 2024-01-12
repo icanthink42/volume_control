@@ -1,7 +1,7 @@
 <form>
-  <input type="button" onclick="play_audio()" value="Play" /></br>
+  <input type="button" onclick="play_audio()" value="Play" /><br>
   <input type="button" onclick="incrementValue(-1)" value="-1" />
-  <input type="text" id="number" value="0" size=1 />%
+  <input type="text" id="number" value="100" size=2 class=hide />%
   <input type="button" onclick="incrementValue(1)" value="+1" />
 </form>
 <script>
@@ -24,7 +24,7 @@
   }
 </script>
 <style>
-  input {
+  .hide {
     background-color: transparent;
     border-color: transparent;
   }
